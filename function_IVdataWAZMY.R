@@ -1,3 +1,11 @@
+#this function uses TMLE to estimate the stochastic direct and indirect effect 
+#for observed data O=(W,A,Z,M,Y), where
+#W are covariates
+#A is an instrumental variable (randomly assigned)
+#Z is an intermediate variable that is affected by instrument A
+#M is a mediator variable and a function of W, Z (but not A, adhering to exclusion restriction)
+#Y is an outcome variable and a function of W, Z, M (but not A, adhering to exclusion restriction)
+
 medtmle<-function(a, z, m, y, w, svywt, zmodel, mmodel, ymodel, qmodel, gm, gma1){
   set.seed(34059)
   datw<-w
