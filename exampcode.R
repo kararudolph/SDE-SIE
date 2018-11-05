@@ -46,4 +46,4 @@ mz0<-predict(mfit, newdata=data.frame(w1=obsdat$w1, z=0), type="response")
 gm<-(mz1*za0) + (mz0*(1-za0))
 gma1<-(mz1*za1) + (mz0*(1-za1))
 
-res<-medtmle(a=obsdat$a, z=obsdat$z, m=obsdat$m, y=obsdat$y, w=data.frame(w1=obsdat$w1), svywt=obsdat$svywt, zmodel=zmodel, mmodel=mmodel, ymodel=ymodel, qmodel=qmodel, gm=gm, gma1=gma1)
+res<-ivmedtmle(a=obsdat$a, z=obsdat$z, m=obsdat$m, y=obsdat$y, w=data.frame(w1=obsdat$w1), svywt=obsdat$svywt, zmodel=zmodel, mmodel=mmodel, ymodel=ymodel, qmodel=qmodel, gm=gm, gma1=gma1)
