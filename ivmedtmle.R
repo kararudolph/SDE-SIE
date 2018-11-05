@@ -6,7 +6,7 @@
 #M is a mediator variable and a function of W, Z (but not A, adhering to exclusion restriction)
 #Y is an outcome variable and a function of W, Z, M (but not A, adhering to exclusion restriction)
 
-medtmle<-function(a, z, m, y, w, svywt, zmodel, mmodel, ymodel, qmodel, gm, gma1){
+ivmedtmle<-function(a, z, m, y, w, svywt, zmodel, mmodel, ymodel, qmodel, gm, gma1){
   set.seed(34059)
   datw<-w
   tmpdat<-data.frame(cbind(datw, a=a))
