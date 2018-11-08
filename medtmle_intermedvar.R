@@ -1,7 +1,13 @@
 #-----------------------------------------------------------------------------------------------------------------------------
 #     
 # This is a function to estimate stochastic direct and indirect effects when there are direct effects of the 
-#   exposure on the mediator and the outcome, and there is a mediator-outcome confounder affected by prior exposure.
+#   exposure on the mediator and the outcome, and there is a mediator-outcome confounder affected by prior exposure. 
+# This corresponds to the following data-generating structure: 
+#     W=f(U_W)
+#     A=f(W, U_A)
+#     Z=f(W, A, U_Z)
+#     M=f(W, A, Z, U_M)
+#     Y=f(W, A, Z, M, U_Y)
 
 # The stochastic direct effect is defined as E(Y_{1,g_0}) - E(Y_{0,g_0})
 #   and the stochastic indirect effect is defined as E(Y_{1,g_1}) - E(Y_{1,g_0})
@@ -30,7 +36,7 @@
 #       
 #-----------------------------------------------------------------------------------------------------------------------------
 
-sm_tmle <- function(obsdat, amodel, zmodel, mmodel, ymodel, qmodel) {
+medtmle_intermedvar <- function(obsdat, amodel, zmodel, mmodel, ymodel, qmodel) {
   
   dfa1 <- dfa0 <- dfa1z1 <- dfa1z0 <- dfa0z1 <- dfa0z0 <- dfm1 <- dfm0 <- tmpdat <- obsdat
   
