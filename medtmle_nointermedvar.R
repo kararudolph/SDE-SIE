@@ -2,6 +2,11 @@
 #     
 # This is a function to estimate stochastic direct and indirect effects when there are direct effects of the 
 #   exposure on the mediator and the outcome, and there is no mediator-outcome confounder affected by prior exposure.
+# This corresponds to the following data-generating structure: 
+#   W=f(U_W)
+#   A=f(W, U_A)
+#   M=f(W, A, U_M)
+#   Y=f(W, A, M, U_Y)
 
 # The stochastic direct effect is defined as E(Y_{1,g_0}) - E(Y_{0,g_0})
 #   and the stochastic indirect effect is defined as E(Y_{1,g_1}) - E(Y_{1,g_0})
